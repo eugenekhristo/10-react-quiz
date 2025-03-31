@@ -3,7 +3,7 @@ function Options({ question, dispatch, answer }) {
 
   return (
     <div className="options">
-      {question.options.map((option, i) => (
+      {question?.options?.map((option, i) => (
         <button
           className={`btn btn-option ${i === answer ? 'answer' : ''} ${
             hasAnswered

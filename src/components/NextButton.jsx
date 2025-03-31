@@ -1,12 +1,21 @@
-function NextButton({ answer, dispatch }) {
+function NextButton({ isLastQuestion, answer, dispatch }) {
+  let isLast = false;
+
   if (answer === null) return null;
+  if (answer && isLastQuestion) isLast = true;
 
   return (
     <button
       className="btn btn-ui"
-      onClick={() => dispatch({ type: 'nextQuestion' })}
+      onClick={() => {
+        if (isLast) {
+          dispatch({ type: 'finished' });
+        } else {
+          dispatch({ type: 'nextQuestion' });
+        }
+      }}
     >
-      Next
+      {isLast ? 'Finish' : 'Next'}
     </button>
   );
 }
