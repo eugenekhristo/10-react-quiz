@@ -36,6 +36,13 @@ body {
 
 .main {
   width: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.main .btn {
+  align-self: center;
 }
 
 .app-header {
